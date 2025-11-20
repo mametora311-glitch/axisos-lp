@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AxisOS – AI Operating System</title>
+    <meta name="description" content="GPT / Gemini / Grok を束ねて役割分担させる、マルチAI時代のためのAIオーケストレーションOS「AxisOS」の概要ページです。" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="axisos.css" />
+</head>
+
+<body>
+    <header>
+        <div style="font-weight:700;">AxisOS</div>
+        <nav>
+            <a href="#overview">概要</a>
+            <a href="#architecture">アーキテクチャ</a>
+            <a href="#usecases">ユースケース</a>
+            <a href="#technical">技術詳細</a>
+            <a href="#project">プロジェクト</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-main">
+                <div class="tagline">AI Orchestration OS</div>
+                <h1>AxisOS – AI Operating System</h1>
+
+                <p>
+                    GPT / Gemini / Grok を束ねて役割分担させる、マルチAI時代のための
+                    「AIオーケストレーションOS」です。ひとつのAIにすべてを任せるのではなく、
+                    「思考」「実行」「監視」「知識」「表現」をAI同士で分担させます。
+                </p>
+            </div>
+            <div class="hero-visual">
+                <img src="../axisos-hero.png" alt="AxisOS" style="max-width:100%; border-radius:16px;">
+            </div>
+        </section>
+        <section class="hero-actions">
+            <div class="hero-actions-inner">
+                <a class="btn-primary" href="#overview">仕組みを詳しく見る</a>
+                <a class="btn-outline" href="#architecture">アーキテクチャ図を見る</a>
+                <a class="btn-outline" href="#project">CAMPFIREプロジェクトを見る</a>
+            </div>
+        </section>
+
+        <!-- Overview -->
+        <section id="overview">
+            <h2>AxisOSとは？</h2>
+            <div class="section-card">
+                <p>
+                    AxisOS は、GPT / Gemini / Grok など複数のAIをまとめて制御するための OS レイヤーです。
+                </p>
+                <p>
+                    1つの質問に対して、
+                </p>
+                <ul>
+                    <li>何を聞かれているのか整理する AI</li>
+                    <li>実際に文章やコードを生成する AI</li>
+                    <li>結果がおかしくないか監視する AI</li>
+                </ul>
+                <p>
+                    といった形で、AIごとに得意な役割を分担させます。
+                </p>
+                <p>
+                    人間は「どのAIを使うか」をその都度選ばずに、AxisOS に対して「やりたいこと」だけを投げる。
+                    その先のモデル選択やタスク分割は、OS が自動で行う――それが AxisOS のコンセプトです。
+                </p>
+
+                <h3>3行で分かる AxisOS</h3>
+                <ul>
+                    <li>複数のAIを、ひとつのOS上で役割分担させて協調動作させる。</li>
+                    <li>タスク内容に応じて、最適なAIと実行順序を自動で決める。</li>
+                    <li>暴走・破綻・負荷集中を監視しながら、安定したアウトプットを返す。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Architecture -->
+        <section id="architecture">
+            <h2>AxisOS の全体アーキテクチャ</h2>
+            <div class="section-card">
+                <p>
+                    下図は、AxisOS 上で各AIエンジンとツールがどのように役割分担しているかを示したものです。
+                    「思考」「実行」「監視」「知識」「メディア出力」がレイヤーとして分かれています。
+                </p>
+
+                <!-- アーキテクチャ図 -->
+                <img src="../axisos-architecture.png" alt="AxisOS Architecture" class="architecture-diagram" />
+
+                <h3>GPT Engine – Execution Layer</h3>
+                <p>
+                    実際の文章生成・コード生成・要約など、アウトプットを形にする「メイン実行役」です。
+                </p>
+
+                <h3>Gemini Engine – Logic / Research Layer</h3>
+                <p>
+                    要件整理・分解・調査・比較検討など、論理構成を担当する「思考エンジン」です。
+                </p>
+
+                <h3>Grok Engine – Monitoring Layer</h3>
+                <p>
+                    出力の異常・暴走・矛盾・制約違反を検知し、警告やリトライを行う「監査エンジン」です。
+                </p>
+
+                <h3>AxisOS Core – Orchestration / Routing / Task Management</h3>
+                <p>
+                    どのタスクをどのAIに、どの順番で投げるかを決める中枢です。
+                    タスク分解・ルーティング・リトライ・並列実行を管理します。
+                </p>
+
+                <h3>NotebookLM – Knowledge Vault（Read-only）</h3>
+                <p>
+                    ドキュメント・マニュアル・仕様書を読み込んでおく、参照専用の知識ストレージです。
+                    AxisOS からは「検索・読む」だけを行い、書き換えは行いません。
+                </p>
+
+                <h3>Toolchain / Media Layer（Canva / Sora / Grok GIF）</h3>
+                <p>
+                    テキストから画像・動画・GIFなどを生成する表現レイヤーです。
+                    AxisOS が生成したプロンプトを渡して、マルチモーダルな出力を実現します。
+                </p>
+            </div>
+        </section>
+
+        <!-- Use cases -->
+        <section id="usecases">
+            <h2>AxisOS が活きるユースケース</h2>
+            <div class="section-card">
+                <h3>ユースケース1：AIアシスタントの安定化</h3>
+                <p>
+                    日々の問い合わせに答えるAIアシスタントの裏側で、
+                </p>
+                <ul>
+                    <li>質問の解釈・意図の整理：Gemini</li>
+                    <li>回答文・コードの生成：GPT</li>
+                    <li>出力の監視・リスク検知：Grok</li>
+                </ul>
+                <p>
+                    といった役割分担を AxisOS が自動で行います。
+                    長時間の対話でも、トーンや方針がブレにくくなります。
+                </p>
+
+                <h3>ユースケース2：コンテンツ生成ワークフローの自動化</h3>
+                <p>
+                    1本のコンテンツを
+                    「構成案 → 本文生成 → 校正 → 要約 → サムネ画像 → ショート動画」
+                    まで自動生成するパイプラインを AxisOS 上に構築します。
+                    各ステップをタスクとして定義し、それぞれに最適なAIを割り当てます。
+                </p>
+
+                <h3>ユースケース3：企業向けAI制御基盤</h3>
+                <p>
+                    既存システムとAIサービスの間に AxisOS を挟むことで、
+                    「どのベンダーのどのモデルを使うか」を後から差し替え可能にします。
+                    ベンダーロックインを避けつつ、マルチAI時代に備えた基盤として利用できます。
+                </p>
+
+                <h3>ユースケース4：Sora / Canva / Grok GIF とのメディア連携</h3>
+                <p>
+                    AxisOS がストーリーボードやプロンプトを組み立て、
+                </p>
+                <ul>
+                    <li>動画生成：Sora</li>
+                    <li>静止画：Canva</li>
+                    <li>ショートGIF：Grok</li>
+                </ul>
+                <p>
+                    に振り分けることで、1つの企画から複数フォーマットのクリエイティブを自動展開できます。
+                </p>
+            </div>
+        </section>
+
+        <!-- Technical details -->
+        <section id="technical">
+            <h2>AxisOS Core の内部構成</h2>
+            <div class="section-card">
+                <p>
+                    ここからは、開発者・プロダクト担当者向けの説明です。
+                    AxisOS をどのようなレイヤー構造で設計しているかを簡潔にまとめます。
+                </p>
+
+                <h3>Orchestration Core</h3>
+                <p>
+                    ユーザーからの要求（自然言語 / APIリクエスト）を受け取り、
+                    どのようなタスクに分解するかを決める中枢ロジックです。
+                </p>
+                <ul>
+                    <li>ワークフロー定義（YAML / JSON）に基づくステップ管理</li>
+                    <li>正常系／例外系／再試行ポリシーの管理</li>
+                    <li>タスク間の依存関係の解決</li>
+                </ul>
+
+                <h3>Routing Engine</h3>
+                <p>
+                    各タスクに対して、どのAIエンジン（GPT / Gemini / Grok / そのほか）を使うかを決定します。
+                </p>
+                <ul>
+                    <li>モデル種別・コスト・レイテンシ・精度などのパラメータを考慮</li>
+                    <li>ルールベース＋将来的には統計的なルーティングにも対応可能な設計</li>
+                    <li>ベンダーごとのAPIエンドポイントを抽象化</li>
+                </ul>
+
+                <h3>Task Manager</h3>
+                <p>
+                    タスクのキューイング・並列実行・タイムアウト・リトライを管理するコンポーネントです。
+                </p>
+                <ul>
+                    <li>非同期実行基盤（例：Cloud Run + Pub/Sub）と連携</li>
+                    <li>優先度キューによる重要タスクの先行処理</li>
+                    <li>実行ログ・トレース情報の収集</li>
+                </ul>
+
+                <h3>Knowledge Vault (NotebookLM)</h3>
+                <p>
+                    NotebookLM を利用した、読み取り専用のナレッジレイヤーです。
+                </p>
+                <ul>
+                    <li>ドキュメント・仕様書・議事録などを NotebookLM 側でインデックス化</li>
+                    <li>AxisOS からは「クエリ → 回答テキスト／引用元リンク」を取得</li>
+                    <li>書き込み・編集は行わず、OS側のロジックからは常に「参照専用」として扱う</li>
+                </ul>
+
+                <h3>Output Pipeline</h3>
+                <p>
+                    生成されたテキスト／構造化データを、
+                    メディアツール群（Sora / Canva / Grok GIF / そのほか）に橋渡しするパイプラインです。
+                </p>
+                <ul>
+                    <li>各ツールに最適化されたプロンプトフォーマットに自動変換</li>
+                    <li>複数フォーマット（動画・画像・テキスト要約）を並列生成</li>
+                    <li>出力物をメタ情報と紐づけてログ・再利用を可能にする</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Project / benefits -->
+        <section id="project">
+            <h2>AxisOS プロジェクトと導入メリット</h2>
+            <div class="section-card">
+                <h3>導入メリット</h3>
+                <ul>
+                    <li>
+                        <strong>マルチAI環境を安定化させる軽量OS</strong><br />
+                        既存アプリケーションやワークフローに挟むだけで、制御レイヤーを追加可能です。
+                    </li>
+                    <li>
+                        <strong>アプリ／サービス双方に組み込みやすい設計</strong><br />
+                        サーバサイド（GCP）中心に設計しつつ、将来的なクライアント連携も視野に入れた構成です。
+                    </li>
+                    <li>
+                        <strong>Primus / AIEC / 未来のNEXSPACEプロダクトと共通基盤化</strong><br />
+                        NEXSPACE 内の各サービスが同じ AxisOS 上で連携できるよう設計しています。
+                    </li>
+                </ul>
+
+                <h3>プロジェクトとクラウドファンディング</h3>
+                <p class="muted">
+                    ※このページは AxisOS の概要・技術コンセプトをまとめた紹介用LPです。
+                    実際のご支援・お申し込みは、CAMPFIRE 上のプロジェクト公開後にそちらから行っていただきます。
+                </p>
+                <p>
+                    AxisOS は現在、クラウドプラットフォーム上でのコア実装と検証フェーズにあります。
+                    開発資金の一部は CAMPFIRE を通じて調達し、
+                    コアモジュール・技術レポート・Developer Preview 環境の公開を進めていきます。
+                </p>
+                <p>
+                    プロジェクトの背景や資金の使い道については、
+                    CAMPFIRE のプロジェクトページでも詳しく説明しています。
+                </p>
+            </div>
+            <div class="hero-cta" style="margin-top:24px;">
+                <!-- TODO: CAMPFIRE / ホワイトペーパー公開後にURLを差し替え -->
+                <a class="btn-primary" href="#" target="_blank" rel="noopener">CAMPFIREプロジェクトを見る</a>
+                <a class="btn-outline" href="#" target="_blank" rel="noopener">技術ホワイトペーパー（PDF）</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="font-size:12px; color:#6b7280;">© NEXSPACE / AxisOS Project</div>
+        <div style="font-size:12px;">
+            <!-- TODO: 各種公式リンクが整い次第URLを差し替え -->
+            <a href="#" target="_blank" rel="noopener">X</a> ・
+            <a href="#" target="_blank" rel="noopener">YouTube</a> ・
+            <a href="#" target="_blank" rel="noopener">NEXSPACE</a>
+        </div>
+    </footer>
+</body>
+
+</html>
