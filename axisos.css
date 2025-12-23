@@ -109,16 +109,7 @@ nav a:hover { color: var(--accent); }
   margin-top: 24px;
 }
 
-/* --- フッター --- */
-/* フッターをリッチにする修正 */
-footer {
-  max-width: 100%; /* 全幅に広げて背景色を出す */
-  background-color: #f9fafb; /* ほんの少しだけグレー */
-  margin-top: 64px;
-  padding: 48px 24px;
-  border-top: 1px solid #e5e7eb;
-  text-align: center;
-}
+
 
 .footer-copy {
   font-size: 12px;
@@ -127,21 +118,7 @@ footer {
   letter-spacing: 0.05em;
 }
 
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 32px; /* リンク同士の間隔を広く */
-}
 
-.footer-links a {
-  font-size: 14px;
-  color: #6b7280;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  padding: 8px 12px;
-  border-radius: 8px;
-}
 
 /* ホバー時に色を変える */
 .footer-links a:hover {
