@@ -83,7 +83,42 @@ header {
 }
 
 /* スマホ対応（メディアクエリ） */
+/* --- モバイル対応の強化 --- */
 @media (max-width: 768px) {
+  /* ヘッダーを縦に並べて重なりを解消 */
+  .header-inner {
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 8px;
+  }
+
+  /* ナビゲーションを折り返し可能にして中央寄せ */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 0; /* 左マージンをリセット */
+    font-size: 13px;
+  }
+
+  /* 下部のCTAボタン（CAMPFIRE等）を縦に並べる */
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .hero-cta .btn-primary,
+  .hero-cta .btn-outline {
+    width: 100%; /* ボタンを横幅いっぱいにする */
+    text-align: center;
+  }
+}@media (max-width: 768px) {
   .hero {
     flex-direction: column;
     padding: 24px;
