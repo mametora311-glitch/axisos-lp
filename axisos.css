@@ -200,3 +200,51 @@ footer {
     margin: 16px;
   }
 }
+
+/* 表題（h2, h3）を中央に寄せて整える */
+h2, h3 {
+  text-align: center;
+  width: 100%;
+}
+
+main section:not(.hero) h2 {
+  font-size: 24px;
+  margin: 32px 0 16px; /* 上下の余白を広げて見やすく */
+  color: var(--text-main);
+  font-weight: 800;
+}
+
+.section-card h3 {
+  font-size: 20px;
+  margin: 24px 0 12px;
+  color: var(--accent-soft); /* 小見出しにアクセント色を適用 */
+}
+
+/* カード内のリストの左余白を調整して中央感を出す */
+.section-card ul {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  text-align: left; /* リストの中身は読みやすく左寄せ */
+  padding-left: 1.5em;
+}
+
+/* フッターをさらに洗練（ダサさの払拭） */
+footer {
+  background-color: #f8fafc;
+  padding: 60px 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 24px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.1em;
+}
