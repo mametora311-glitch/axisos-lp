@@ -110,10 +110,12 @@ nav a:hover { color: var(--accent); }
 }
 
 /* --- フッター --- */
+/* フッターをリッチにする修正 */
 footer {
-  max-width: 1120px;
-  margin: 48px auto 0;
-  padding: 40px 24px;
+  max-width: 100%; /* 全幅に広げて背景色を出す */
+  background-color: #f9fafb; /* ほんの少しだけグレー */
+  margin-top: 64px;
+  padding: 48px 24px;
   border-top: 1px solid #e5e7eb;
   text-align: center;
 }
@@ -121,20 +123,41 @@ footer {
 .footer-copy {
   font-size: 12px;
   color: var(--text-muted);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 32px; /* リンク同士の間隔を広く */
 }
 
 .footer-links a {
-  text-decoration: none;
-  font-size: 13px;
-  color: #4b5563;
+  font-size: 14px;
+  color: #6b7280;
   font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* ホバー時に色を変える */
+.footer-links a:hover {
+  color: var(--accent);
+  background-color: #f0f9ff;
+  text-decoration: none;
+}
+
+/* スマホではリンクを少し詰め気味に */
+@media (max-width: 480px) {
+  .footer-links {
+    gap: 16px;
+  }
+  .footer-links a {
+    font-size: 13px;
+  }
 }
 
 /* --- モバイル対応 (768px以下) --- */
