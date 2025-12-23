@@ -1,4 +1,5 @@
 :root {
+  /* AxisOS ブランドカラー */
   --accent: #0ea5e9;
   --accent-soft: #1d4ed8;
   --bg-page: #f3f4f6;
@@ -16,9 +17,18 @@ body {
   color: var(--text-main);
   line-height: 1.8;
   font-size: 15.5px;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* --- ヘッダー --- */
+/* リンク共通 */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+a:hover { opacity: 0.7; }
+
+/* ヘッダー：画面上部に固定＋ボケ効果 */
 header {
   position: sticky;
   top: 0;
@@ -27,42 +37,36 @@ header {
   background: rgba(255, 255, 255, 0.9);
   border-bottom: 1px solid #e5e7eb;
   backdrop-filter: blur(12px);
-  padding: 8px 16px;
+  padding: 12px 24px;
 }
 
 .header-inner {
   max-width: 1120px;
   margin: 0 auto;
   display: flex;
-  flex-direction: row; /* 基本は横並び */
   align-items: center;
   justify-content: space-between;
 }
 
-header div {
-  font-size: 18px;
-  font-weight: 700;
-}
+header div { font-weight: 700; font-size: 18px; }
 
+/* ナビゲーション：スマホでは横スクロール可能に */
 nav {
   display: flex;
   gap: 16px;
 }
 
 nav a {
-  text-decoration: none;
   font-size: 14px;
-  color: var(--text-muted);
-  transition: color 0.2s;
+  color: #4b5563;
+  font-weight: 500;
 }
 
-nav a:hover { color: var(--accent); }
-
-/* --- メインコンテンツ --- */
+/* ヒーローセクション：カード型 */
 .hero {
   max-width: 1120px;
   margin: 24px auto;
-  padding: 40px;
+  padding: 48px;
   background: var(--bg-card);
   border-radius: 24px;
   display: flex;
@@ -74,154 +78,113 @@ nav a:hover { color: var(--accent); }
 .hero-main { flex: 1.2; }
 .hero-visual {
   flex: 1;
-  background: #000;
+  background: radial-gradient(circle at top left, #0b1120 0, #020617 100%);
   border-radius: 20px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
-.hero-image {
+.hero-image { width: 100%; height: auto; display: block; }
+
+/* 見出しのセンタリング修正 */
+h2 {
+  font-size: 28px;
+  text-align: center;
+  margin: 48px 0 24px;
+  font-weight: 800;
   width: 100%;
-  height: auto;
-  display: block;
 }
 
+h3 {
+  font-size: 20px;
+  text-align: center;
+  margin: 32px 0 16px;
+  color: var(--accent-soft);
+  width: 100%;
+}
+
+/* コンテンツカード */
 .section-card {
   max-width: 1120px;
-  margin: 16px auto;
+  margin: 0 auto 16px;
   background: var(--bg-card);
   border-radius: 24px;
-  padding: 32px;
+  padding: 40px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
+p { margin: 16px 0; color: #374151; }
+
+ul {
+  max-width: 640px;
+  margin: 20px auto;
+  padding-left: 20px;
+  color: #374151;
+  text-align: left;
+}
+
+/* アーキテクチャ図のサイズ固定 */
 .architecture-diagram {
   display: block;
-  max-width: 600px;
+  max-width: 520px;
   width: 100%;
   margin: 32px auto;
   border-radius: 12px;
 }
 
-.hero-cta {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 24px;
-}
-
-
-
-.footer-copy {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-bottom: 24px;
-  letter-spacing: 0.05em;
-}
-
-
-
-/* ホバー時に色を変える */
-.footer-links a:hover {
-  color: var(--accent);
-  background-color: #f0f9ff;
-  text-decoration: none;
-}
-
-/* スマホではリンクを少し詰め気味に */
-@media (max-width: 480px) {
-  .footer-links {
-    gap: 16px;
-  }
-  .footer-links a {
-    font-size: 13px;
-  }
-}
-
-/* --- モバイル対応 (768px以下) --- */
-@media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  nav {
-    width: 100%;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 4px;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  nav::-webkit-scrollbar { display: none; }
-
-  nav a {
-    white-space: nowrap;
-    padding: 4px 8px;
-  }
-
-  .hero {
-    flex-direction: column;
-    padding: 24px;
-    margin: 16px;
-  }
-
-  .hero h1 { font-size: 28px; }
-
-  .hero-cta {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .section-card {
-    padding: 20px;
-    margin: 16px;
-  }
-}
-
-/* 表題（h2, h3）を中央に寄せて整える */
-h2, h3 {
-  text-align: center;
-  width: 100%;
-}
-
-main section:not(.hero) h2 {
-  font-size: 24px;
-  margin: 32px 0 16px; /* 上下の余白を広げて見やすく */
-  color: var(--text-main);
-  font-weight: 800;
-}
-
-.section-card h3 {
-  font-size: 20px;
-  margin: 24px 0 12px;
-  color: var(--accent-soft); /* 小見出しにアクセント色を適用 */
-}
-
-/* カード内のリストの左余白を調整して中央感を出す */
-.section-card ul {
-  max-width: 600px;
-  margin: 0 auto 20px;
-  text-align: left; /* リストの中身は読みやすく左寄せ */
-  padding-left: 1.5em;
-}
-
-/* フッターをさらに洗練（ダサさの払拭） */
+/* プロフェッショナルなダークフッター */
 footer {
-  background-color: #f8fafc;
-  padding: 60px 24px;
-  border-top: 1px solid #e2e8f0;
+  max-width: 100%;
+  margin-top: 80px;
+  padding: 80px 24px;
+  background-color: #111827; /* ダークネイビー */
+  color: #9ca3af;
+  text-align: center;
+  border-top: 1px solid #1f2937;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .footer-links a {
+  color: #f3f4f6;
   font-size: 14px;
   font-weight: 600;
-  color: #64748b;
   letter-spacing: 0.1em;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: #6b7280;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* モバイル対応：iPhone 16eなど */
+@media (max-width: 768px) {
+  header { padding: 10px 16px; }
+  .header-inner { flex-direction: column; gap: 12px; }
+  nav { 
+    width: 100%; 
+    justify-content: center; 
+    overflow-x: auto; 
+    padding-bottom: 4px;
+    gap: 12px;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { white-space: nowrap; font-size: 13px; }
+
+  .hero { flex-direction: column; padding: 32px 20px; margin: 16px; }
+  .hero h1 { font-size: 26px; text-align: center; }
+  .hero p { text-align: center; font-size: 14px; }
+  
+  .section-card { padding: 24px 20px; margin: 0 16px 16px; }
+  h2 { font-size: 22px; margin: 32px 0 16px; }
+  
+  .footer-links { gap: 20px; flex-wrap: wrap; }
 }
