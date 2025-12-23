@@ -128,3 +128,43 @@ header {
   .section-card { padding: 20px; }
   header nav { display: none; } /* スマホではナビを隠してスッキリ */
 }
+
+/* プロジェクトセクションのボタン重なり解消 */
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center; /* 中央寄せ */
+  margin-top: 24px;
+}
+
+/* フッターの微調整 */
+footer {
+  max-width: 1120px;
+  margin: 40px auto 0;
+  padding: 24px 16px 40px; /* 下に余裕を持たせる */
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column; /* スマホでは縦並びに */
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+}
+
+/* メディアクエリ（スマホ用）の追加調整 */
+@media (max-width: 768px) {
+  .hero-cta {
+    flex-direction: column; /* 縦に並べる */
+    width: 100%;
+  }
+  .hero-cta .btn-primary,
+  .hero-cta .btn-outline {
+    width: 100%; /* ボタンを横いっぱいに広げる */
+    text-align: center;
+  }
+  /* 「グ」の浮き対策：見出しの余白をリセット */
+  main section:not(.hero) h2 {
+    word-break: keep-all; /* 単語の途中で改行させない */
+    overflow-wrap: break-word;
+  }
+}
