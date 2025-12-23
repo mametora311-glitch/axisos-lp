@@ -133,22 +133,34 @@ ul {
   border-radius: 12px;
 }
 
+/* リンクをボタンとして整列させる */
+.final-actions {
+  display: flex;
+  flex-direction: column; /* スマホでは縦に並べる */
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0;
+  padding: 0 24px;
+}
+
 /* プロフェッショナルなダークフッター */
 footer {
-  max-width: 100%;
-  margin-top: 80px;
-  padding: 80px 24px;
-  background-color: #111827; /* ダークネイビー */
+  width: 100%;
+  margin-top: 40px;      /* 余白を半分に */
+  padding: 40px 24px;    /* 高さを半分に */
+  background-color: #111827; 
   color: #9ca3af;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  border-top: 1px solid #1f2937;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-bottom: 32px;
+  gap: 24px;             /* 間隔を少し詰める */
+  margin-bottom: 16px;   /* 余白を削減 */
 }
 
 .footer-links a {
@@ -163,6 +175,13 @@ footer {
   color: #6b7280;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .final-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 /* モバイル対応：iPhone 16eなど */
