@@ -14,30 +14,51 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
   background: var(--bg-page);
   color: var(--text-main);
-  line-height: 1.8; /* 少し詰めました */
+  line-height: 1.8;
   font-size: 15.5px;
 }
 
+/* --- ヘッダー --- */
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-  width: 100%; /* 全幅に修正 */
-  background: rgba(248, 250, 252, 0.9);
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
   border-bottom: 1px solid #e5e7eb;
   backdrop-filter: blur(12px);
-  padding: 12px 24px;
+  padding: 8px 16px;
 }
 
-/* ヘッダー内部のコンテナ */
 .header-inner {
   max-width: 1120px;
   margin: 0 auto;
   display: flex;
+  flex-direction: row; /* 基本は横並び */
   align-items: center;
   justify-content: space-between;
 }
 
+header div {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--accent); }
+
+/* --- メインコンテンツ --- */
 .hero {
   max-width: 1120px;
   margin: 24px auto;
@@ -64,107 +85,95 @@ header {
   display: block;
 }
 
-/* カード形式の共通設定 */
 .section-card {
+  max-width: 1120px;
+  margin: 16px auto;
   background: var(--bg-card);
   border-radius: 24px;
   padding: 32px;
-  margin-top: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
-/* アーキテクチャ図のサイズ固定 */
 .architecture-diagram {
   display: block;
-  max-width: 480px; /* 少し大きくしました */
+  max-width: 600px;
   width: 100%;
   margin: 32px auto;
   border-radius: 12px;
 }
 
-/* スマホ対応（メディアクエリ） */
-/* --- モバイル対応の強化 --- */
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* --- フッター --- */
+footer {
+  max-width: 1120px;
+  margin: 48px auto 0;
+  padding: 40px 24px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* --- モバイル対応 (768px以下) --- */
 @media (max-width: 768px) {
-  /* ヘッダーを縦に並べて重なりを解消 */
   .header-inner {
     flex-direction: column;
-    padding: 10px 0;
     gap: 8px;
   }
 
-  /* ナビゲーションを折り返し可能にして中央寄せ */
   nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
   }
+
+  nav::-webkit-scrollbar { display: none; }
 
   nav a {
-    margin: 0; /* 左マージンをリセット */
-    font-size: 13px;
+    white-space: nowrap;
+    padding: 4px 8px;
   }
 
-  /* 下部のCTAボタン（CAMPFIRE等）を縦に並べる */
-  .hero-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-  }
-
-  .hero-cta .btn-primary,
-  .hero-cta .btn-outline {
-    width: 100%; /* ボタンを横幅いっぱいにする */
-    text-align: center;
-  }
-}@media (max-width: 768px) {
   .hero {
     flex-direction: column;
     padding: 24px;
     margin: 16px;
   }
+
   .hero h1 { font-size: 28px; }
-  .section-card { padding: 20px; }
-  header nav { display: none; } /* スマホではナビを隠してスッキリ */
-}
 
-/* プロジェクトセクションのボタン重なり解消 */
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center; /* 中央寄せ */
-  margin-top: 24px;
-}
-
-/* フッターの微調整 */
-footer {
-  max-width: 1120px;
-  margin: 40px auto 0;
-  padding: 24px 16px 40px; /* 下に余裕を持たせる */
-  border-top: 1px solid #e5e7eb;
-  display: flex;
-  flex-direction: column; /* スマホでは縦並びに */
-  gap: 12px;
-  align-items: center;
-  text-align: center;
-}
-
-/* メディアクエリ（スマホ用）の追加調整 */
-@media (max-width: 768px) {
   .hero-cta {
-    flex-direction: column; /* 縦に並べる */
+    flex-direction: column;
     width: 100%;
   }
-  .hero-cta .btn-primary,
-  .hero-cta .btn-outline {
-    width: 100%; /* ボタンを横いっぱいに広げる */
-    text-align: center;
-  }
-  /* 「グ」の浮き対策：見出しの余白をリセット */
-  main section:not(.hero) h2 {
-    word-break: keep-all; /* 単語の途中で改行させない */
-    overflow-wrap: break-word;
+
+  .section-card {
+    padding: 20px;
+    margin: 16px;
   }
 }
